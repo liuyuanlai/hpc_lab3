@@ -113,4 +113,8 @@ int main (int argc, char *argv[])
    }
    MPI_Finalize ();
    return 0;
+   printf("id:%d\n", id);
+   printf("size: %lld\n", low_value);
+   printf("low_value: %lld\n", low_value);
+   printf("high_value: %lld\n", high_value);
 }
