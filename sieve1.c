@@ -13,19 +13,19 @@
 
 int main (int argc, char *argv[])
 {
-   long long int    count;        /* Local prime count */
+   int    count;        /* Local prime count */
    double elapsed_time; /* Parallel execution time */
-   long long int    first;        /* Index of first multiple */
-   long long int    global_count; /* Global prime count */
-   long long int    high_value;   /* Highest value on this proc */
+   int    first;        /* Index of first multiple */
+   int    global_count; /* Global prime count */
+   int    high_value;   /* Highest value on this proc */
    int    i;
    int    id;           /* Process ID number */
    int    index;        /* Index of current prime */
-   long long int    low_value;    /* Lowest value on this proc */
+   int    low_value;    /* Lowest value on this proc */
    char  *marked;       /* Portion of 2,...,'n' */
-   long long int    n;            /* Sieving from 2, ..., 'n' */
+   int    n;            /* Sieving from 2, ..., 'n' */
    int    p;            /* Number of processes */
-   long long int    proc0_size;   /* Size of proc 0's subarray */
+   int    proc0_size;   /* Size of proc 0's subarray */
    int    prime;        /* Current prime */
    int    size;         /* Elements in 'marked' */
 
@@ -44,7 +44,7 @@ int main (int argc, char *argv[])
       exit (1);
    }
 
-   n = atoll(argv[1]);
+   n = atoi(argv[1]);
 
    /* Figure out this process's share of the array, as
       well as the integers represented by the first and
