@@ -111,10 +111,6 @@ int main (int argc, char *argv[])
          global_count, n);
       printf ("SIEVE (%d) %10.6f\n", p, elapsed_time);
    }
-   printf("id:%d\n", id);
-   printf("size: %ld\n", size);
-   printf("low_value: %lld\n", low_value);
-   printf("high_value: %lld\n", high_value); 
    MPI_Finalize ();
    return 0;
    
