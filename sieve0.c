@@ -14,21 +14,21 @@
 
 int main (int argc, char *argv[])
 {
-   unsigned long long int    count;        /* Local prime count */
+   unsigned long int    count;        /* Local prime count */
    double elapsed_time; /* Parallel execution time */
-   unsigned long long int    first;        /* Index of first multiple */
-   unsigned long long int    global_count; /* Global prime count */
+   unsigned long int    first;        /* Index of first multiple */
+   unsigned long int    global_count; /* Global prime count */
    unsigned long long int    high_value;   /* Highest value on this proc */
-   unsigned long long int    i;
+   unsigned long int    i;
    int    id;           /* Process ID number */
    unsigned long long int    index;        /* Index of current prime */
    unsigned long long int    low_value;    /* Lowest value on this proc */
    char  *marked;       /* Portion of 2,...,'n' */
    unsigned long long int    n;            /* Sieving from 2, ..., 'n' */
    int    p;            /* Number of processes */
-   unsigned long long int    proc0_size;   /* Size of proc 0's subarray */
-   unsigned long long int    prime;        /* Current prime */
-   unsigned long long int    size;         /* Elements in 'marked' */
+   unsigned long int    proc0_size;   /* Size of proc 0's subarray */
+   unsigned long int    prime;        /* Current prime */
+   unsigned long int    size;         /* Elements in 'marked' */
 
    MPI_Init (&argc, &argv);
 
