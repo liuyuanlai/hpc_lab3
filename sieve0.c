@@ -21,7 +21,7 @@ int main (int argc, char *argv[])
    unsigned long long int    high_value;   /* Highest value on this proc */
    unsigned long int    i;
    int    id;           /* Process ID number */
-   unsigned long long int    index;        /* Index of current prime */
+   unsigned long int    index;        /* Index of current prime */
    unsigned long long int    low_value;    /* Lowest value on this proc */
    char  *marked;       /* Portion of 2,...,'n' */
    unsigned long long int    n;            /* Sieving from 2, ..., 'n' */
@@ -107,14 +107,15 @@ int main (int argc, char *argv[])
    /* Print the results */
 
    if (!id) {
-      printf ("There are %lld primes less than or equal to %lld\n",
+      printf ("There are %ld primes less than or equal to %lld\n",
          global_count, n);
       printf ("SIEVE (%d) %10.6f\n", p, elapsed_time);
    }
+   printf("id:%d\n", id);
+   printf("size: %ld\n", size);
+   printf("low_value: %lld\n", low_value);
+   printf("high_value: %lld\n", high_value); 
    MPI_Finalize ();
    return 0;
-   printf("id:%d\n", id);
-   printf("size: %lld\n", low_value);
-   printf("low_value: %lld\n", low_value);
-   printf("high_value: %lld\n", high_value);
+   
 }
