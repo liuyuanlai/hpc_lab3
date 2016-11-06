@@ -30,9 +30,9 @@ int main (int argc, char *argv[])
    int    p;            /* Number of processes */
    unsigned long int    proc0_size;   /* Size of proc 0's subarray */
    unsigned long int    prime;
-   int  local_prime;        /* Current prime */
+   unsigned long int  local_prime;        /* Current prime */
    unsigned long int    size;         /* Elements in 'marked' */
-   int  local_prime_size;
+   unsigned long int  local_prime_size;
 
 
    MPI_Init (&argc, &argv);
