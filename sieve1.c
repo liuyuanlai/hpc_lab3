@@ -50,16 +50,16 @@ int main (int argc, char *argv[])
       well as the integers represented by the first and
       last array elements */
 
-   low_value = 2 + id*(n-1)/p;
-   high_value = 1 + (id+1)*(n-1)/p;
+   low_value = 2*id*(n/2-1)/p + 1;
+   high_value = 2*(id+1)*(n/2-1)/p -1;
    size = high_value - low_value + 1;
 
    /* Bail out if all the primes used for sieving are
       not all held by process 0 */
 
-   proc0_size = (n-1)/p;
+   proc0_size = (n/2-1)/p;
 
-   if ((2 + proc0_size) < (int) sqrt((double) n)) {
+   if ((2 + proc0_size) < (int) sqrt((double) n/2)) {
       if (!id) printf ("Too many processes\n");
       MPI_Finalize();
       exit (1);
