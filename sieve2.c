@@ -103,14 +103,7 @@ int main (int argc, char *argv[])
          first = (prime * prime - low_value) / 2;
       else {
          if (!(low_value % prime)) first = 0;
-         else {
-            first = 1;
-            first_test = low_value + 2;
-            while(first_test % prime) {
-               first++;
-               first_test += 2;
-            }
-         }
+         else first = (prime - low_value % prime + low_value / prime % 2 * prime) / 2;
       }
       for (i = first; i < size; i += prime) marked[i] = 1;
       while (local_prime_marked[++index]);
