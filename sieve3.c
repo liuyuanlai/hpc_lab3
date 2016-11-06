@@ -97,13 +97,13 @@ int main (int argc, char *argv[])
    unsigned long long int first_test;
    for (i = 0; i < size; i++) marked[i] = 0;
 
-   int block_size = 1024;
+   int block_size = 4096;
    unsigned long long int block_low_value = low_value;
    unsigned long long int block_high_value = block_low_value + 2 * (block_size - 1);
    do {
       index = 0;
       prime = 3;
-      while (prime <= (int) sqrt((double) block_high_value)) {
+      while (prime * prime <= block_high_value) {
          if (prime * prime > block_low_value)
          first = (prime * prime - block_low_value) / 2;
          else {
