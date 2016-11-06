@@ -129,7 +129,7 @@ int main (int argc, char *argv[])
       
 
       
-   } while (block_low_value < high_value);
+   } while (block_low_value <= high_value);
    count = 0; 
    for (i = 0; i < size; i++)
       if (!marked[i]) count++;
