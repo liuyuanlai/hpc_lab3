@@ -61,7 +61,7 @@ int main (int argc, char *argv[])
    high_value = 1 + (id+1)*(n-1)/p;
    high_value = high_value - (high_value + 1) % 2;
    size = (high_value - low_value) / 2 + 1;
-   local_prime_size  = (int)sqrt((double)(n)) - 2;
+   local_prime_size  = (int)sqrt((double)(n)) - 1;
 
    /* Bail out if all the primes used for sieving are
       not all held by process 0 */
@@ -84,14 +84,14 @@ int main (int argc, char *argv[])
       MPI_Finalize();
       exit (1);
    }
-
-   local_prime = 3;
+   local_prime = 2;
+   for (i = 0; i < size; i++) local_marked[i] = 0;
    index = 0;
    do {
-      local_first = local_prime * local_prime - 3;
+      local_first = local_prime * local_prime - 2;
       for (i=local_first; i < local_prime_size; i += local_prime) local_prime_marked[i] = 1;
       while (local_prime_marked[++index]);
-      local_prime = 3 + index;
+      local_prime = 2 + index;
    } while (local_prime * local_prime <= local_prime_size);
 
    unsigned long long int first_test;
