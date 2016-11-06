@@ -51,9 +51,11 @@ int main (int argc, char *argv[])
       well as the integers represented by the first and
       last array elements */
 
-   low_value = 2*id*(n/2-1)/p + 1;
-   high_value = 2*(id+1)*(n/2-1)/p -1;
-   size = (high_value - low_value) / 2;
+   low_value = 2 + id*(n-1)/p;
+   low_value = low_value + (low_value + 1) % 2
+   high_value = 1 + (id+1)*(n-1)/p;
+   high_value = high_value - (high_value + 1) % 2
+   size = (high_value - low_value) / 2 + 1;
 
    /* Bail out if all the primes used for sieving are
       not all held by process 0 */
@@ -75,16 +77,23 @@ int main (int argc, char *argv[])
       MPI_Finalize();
       exit (1);
    }
-
+   unsigned long long int first_test;
    for (i = 0; i < size; i++) marked[i] = 0;
    if (!id) index = 0;
-   prime = 2;
+   prime = 3;
    do {
       if (prime * prime > low_value)
-         first = prime * prime - low_value;
+         first = (prime * prime - low_value) / 2;
       else {
          if (!(low_value % prime)) first = 0;
-         else first = prime - (low_value % prime);
+         else {
+            first = 0;
+            first_test = low_value + 2;
+            while(first_test % prime) {
+               first++;
+               first_test += 2;
+            }
+         }
       }
       for (i = first; i < size; i += prime) marked[i] = 1;
       if (!id) {
