@@ -125,7 +125,7 @@ int main (int argc, char *argv[])
       }
       block_low_value = block_high_value + 2;
       block_high_value = block_low_value + 2 * (block_size - 1);
-      if(block_high_value > high_value) block_high_valueb = high_value;
+      if(block_high_value > high_value) block_high_value = high_value;
       
 
       
