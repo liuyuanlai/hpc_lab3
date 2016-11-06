@@ -88,7 +88,7 @@ int main (int argc, char *argv[])
       else {
          if (!(low_value % prime)) first = 0;
          else {
-            first = 0;
+            first = 1;
             first_test = low_value + 2;
             while(first_test % prime) {
                first++;
