@@ -1,6 +1,6 @@
-TARGET = test
-SOURCE = test.c
-OBJS = test.o
+TARGET = sieve
+SOURCE = sieve.c
+OBJS = sieve.o
 CC = mpicc
 RES = sieve.job.*
 
