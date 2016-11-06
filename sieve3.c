@@ -99,25 +99,15 @@ int main (int argc, char *argv[])
 
    unsigned long long int block_size = 8192;
    unsigned long long int block_low_value = low_value;
-   //unsigned long long int block_high_value = block_low_value + 2 * (block_size - 1);
-   unsigned long long int block_high_value = high_value;
+   unsigned long long int block_high_value = block_low_value + 2 * (block_size - 1);
+   //unsigned long long int block_high_value = high_value;
    do {
       index = 0;
       prime = 3;
       while (prime * prime <= block_high_value) {
          if (prime * prime > block_low_value)
          first = (prime * prime - block_low_value) / 2;
-         else {
-            if (!(block_low_value % prime)) first = 0;
-            else {
-               first = 1;
-               first_test = block_low_value + 2;
-               while(first_test % prime) {
-                  first++;
-                  first_test += 2;
-               }
-            }
-         }
+         else first = (prime - block_low_value % prime + block_low_value / prime % 2 * prime) / 2;
 
          for (i = first + (block_low_value - low_value) / 2 ; i <= (block_high_value - low_value) / 2; i += prime) marked[i] = 1;
          while (local_prime_marked[++index]);
