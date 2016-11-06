@@ -1,6 +1,6 @@
-TARGET = sieve0
-SOURCE = sieve0.c
-OBJS = sieve0.o
+TARGET = sieve2
+SOURCE = sieve2.c
+OBJS = sieve2.o
 CC=mpicc
 
 $(TARGET):$(SOURCE)
