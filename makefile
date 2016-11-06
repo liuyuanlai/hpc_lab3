@@ -1,6 +1,6 @@
-TARGET = sieve2
-SOURCE = sieve2.c
-OBJS = sieve2.o
+TARGET = sieve1
+SOURCE = sieve1.c
+OBJS = sieve1.o
 CC = mpicc
 RES = sieve.job.*
 
