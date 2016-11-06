@@ -52,9 +52,9 @@ int main (int argc, char *argv[])
       last array elements */
 
    low_value = 2 + id*(n-1)/p;
-   low_value = low_value + (low_value + 1) % 2
+   low_value = low_value + (low_value + 1) % 2;
    high_value = 1 + (id+1)*(n-1)/p;
-   high_value = high_value - (high_value + 1) % 2
+   high_value = high_value - (high_value + 1) % 2;
    size = (high_value - low_value) / 2 + 1;
 
    /* Bail out if all the primes used for sieving are
