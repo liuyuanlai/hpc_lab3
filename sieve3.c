@@ -103,7 +103,7 @@ int main (int argc, char *argv[])
    do {
       index = 0;
       prime = 3;
-      while (prime < (int) sqrt((double) block_high_value)) {
+      while (prime <= (int) sqrt((double) block_high_value)) {
          if (prime * prime > block_low_value)
          first = (prime * prime - block_low_value) / 2;
          else {
