@@ -106,6 +106,7 @@ int main (int argc, char *argv[])
    count = 0;
    for (i = 0; i < size; i++)
       if (!marked[i]) count++;
+   if (!id) count++;
    if (p > 1) MPI_Reduce (&count, &global_count, 1, MPI_INT, MPI_SUM,
       0, MPI_COMM_WORLD);
 
@@ -121,10 +122,6 @@ int main (int argc, char *argv[])
          global_count, n);
       printf ("SIEVE (%d) %10.6f\n", p, elapsed_time);
    }
-   printf("id:%d",id);
-   printf("low_value: %lld", low_value);
-   printf("high_value: %lld\n", high_value);
-   printf("size: %ld\n", size);
    MPI_Finalize ();
    return 0;
 }
