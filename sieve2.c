@@ -92,7 +92,7 @@ int main (int argc, char *argv[])
       for (i=local_first; i < local_prime_size; i += local_prime) local_prime_marked[i] = 1;
       while (local_prime_marked[++index]);
       local_prime = 2 + index;
-   } while (local_prime * local_prime <= local_prime_size);
+   } while (local_prime * local_prime <= n);
 
    unsigned long long int first_test;
    for (i = 0; i < size; i++) marked[i] = 0;
@@ -114,7 +114,7 @@ int main (int argc, char *argv[])
       }
       for (i = first; i < size; i += prime) marked[i] = 1;
       while (local_prime_marked[++index]);
-      prime = 3+ index;
+      prime = 2 + index;
    } while (prime * prime <= n);
    count = 0;
    for (i = 0; i < size; i++)
