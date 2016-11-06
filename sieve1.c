@@ -78,7 +78,6 @@ int main (int argc, char *argv[])
       MPI_Finalize();
       exit (1);
    }
-   unsigned long long int first_test;
    for (i = 0; i < size; i++) marked[i] = 0;
    if (!id) index = 0;
    prime = 3;
