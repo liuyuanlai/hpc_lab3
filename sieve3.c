@@ -97,10 +97,10 @@ int main (int argc, char *argv[])
    unsigned long long int first_test;
    for (i = 0; i < size; i++) marked[i] = 0;
 
-   unsigned long long int block_size = 64;
+   unsigned long long int block_size = 8192;
    unsigned long long int block_low_value = low_value;
-   //unsigned long long int block_high_value = block_low_value + 2 * (block_size - 1);
-   unsigned long long int block_high_value = high_value;
+   unsigned long long int block_high_value = block_low_value + 2 * (block_size - 1);
+   //unsigned long long int block_high_value = high_value;
    do {
       index = 0;
       prime = 3;
