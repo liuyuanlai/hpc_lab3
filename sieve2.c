@@ -88,7 +88,7 @@ int main (int argc, char *argv[])
    local_prime = 3;
    index = 0;
    do {
-      local_first = prime * prime - 3;
+      local_first = local_prime * local_prime - 3;
       for (i=local_first; i < local_prime_size; i += local_prime) local_prime_marked[i] = 1;
       while (local_prime_marked[++index]);
       local_prime = 3 + index;
