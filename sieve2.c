@@ -85,7 +85,7 @@ int main (int argc, char *argv[])
       exit (1);
    }
    local_prime = 2;
-   for (i = 0; i < size; i++) local_marked[i] = 0;
+   for (i = 0; i < size; i++) local_prime_marked[i] = 0;
    index = 0;
    do {
       local_first = local_prime * local_prime - 2;
